@@ -5,9 +5,10 @@ var Component = require('./component')
 module.exports = function (state, emit, render) {
   return html`
     <body>
-      <h1>Sup planet</h1>
       ${render(Component, 'header')}
+      <h1>Sup planet</h1>
       ${render(Component, 'footer')}
+      <a href="/async">async</a>
     </body>
   `
 }
