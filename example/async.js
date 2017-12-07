@@ -16,19 +16,6 @@ module.exports = class Async extends Nanocomponent {
     return true
   }
 
-  // patch for nanocomponent which defaults to div as placeholder element
-  _createProxy () {
-    var proxy = document.createElement('body')
-    var self = this
-    this._brandNode(proxy)
-    proxy.id = this._id
-    proxy.setAttribute('data-proxy', '')
-    proxy.isSameNode = function (el) {
-      return (el && el.dataset.nanocomponent === self._ncID)
-    }
-    return proxy
-  }
-
   createElement (state, emit, render) {
     return html`
       <body>
